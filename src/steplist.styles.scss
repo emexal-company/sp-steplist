@@ -1,0 +1,27 @@
+@import 'steplist.vars';
+
+.spectrum-Steplist {
+    z-index: 0;
+    position: relative;
+
+    display: block;
+    vertical-align: top;
+    margin: 0;
+    padding-top: 22px;
+    padding-left: 60px;
+    padding-right: 60px;
+
+    text-align: center;
+    white-space: nowrap;
+    font-size: 0;
+    line-height: 16px;
+}
+
+.spectrum-Steplist--small {
+    padding: 11px 0;
+}
+
+:host {
+    display: inline-block;
+}
+

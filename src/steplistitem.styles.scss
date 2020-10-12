@@ -1,0 +1,205 @@
+@import 'steplist.vars';
+
+.spectrum-Steplist-segment[type="solid"] {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+.spectrum-Steplist-segment {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    right: 68px;
+
+    box-sizing: content-box;
+    width: 104px;
+    bottom: -1px;
+    border-bottom-width: 2px;
+    border-bottom-style: dashed;
+}
+.spectrum-Steplist-segment[type="none"] {
+    display: none;
+}
+
+.spectrum-Steplist-item[last] .spectrum-Steplist-segment {
+    right: 8px;
+    left: auto;
+}
+
+.spectrum-Steplist-segment {
+    border-bottom-color: var(--spectrum-steplist-incomplete-segment-color, var(--spectrum-global-color-gray-300))
+}
+
+.spectrum-Steplist-segment[type="solid"] {
+    border-bottom-color: var(--spectrum-steplist-complete-segment-color, var(--spectrum-global-color-gray-500))
+}
+
+.spectrum-Steplist-item[small][first] .spectrum-Steplist-markerContainer {
+    margin-left: -10px;
+}
+
+.spectrum-Steplist-item[small][last] .spectrum-Steplist-markerContainer {
+    margin-right: -10px;
+}
+
+.spectrum-Steplist-item[interactive] .spectrum-Steplist-label,
+.spectrum-Steplist-item[interactive] .spectrum-Steplist-markerContainer {
+    cursor: pointer;
+}
+
+.spectrum-Steplist-markerContainer {
+    display: block;
+
+    z-index: 2;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    margin-left: -10px;
+}
+
+.spectrum-Steplist-item[first] .spectrum-Steplist-markerContainer {
+    left: 0;
+}
+
+.spectrum-Steplist-item[last] .spectrum-Steplist-markerContainer {
+    left: auto;
+    right: 0;
+
+    margin-left: 0;
+    margin-right: -10px;
+}
+
+.spectrum-Steplist-item[first][last] .spectrum-Steplist-markerContainer {
+    left: 50%;
+    margin-right: 0;
+    margin-left: -10px;
+}
+
+.spectrum-Steplist-marker[type="complete"] {
+    border: none;
+}
+
+.spectrum-Steplist-marker[type="selected"] {
+    border: none;
+}
+
+.spectrum-Steplist-marker {
+    box-sizing: border-box;
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -4px;
+    margin-left: -4px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 8px;
+
+    border: 2px solid;
+    border-color: transparent;
+    background: transparent;
+}
+
+.spectrum-Steplist-marker {
+    border-color: var(--spectrum-steplist-incomplete-marker-color, var(--spectrum-global-color-gray-300))
+}
+
+.spectrum-Steplist-marker[type="complete"] {
+    background-color: var(--spectrum-steplist-complete-marker-color, var(--spectrum-global-color-gray-600))
+}
+
+.spectrum-Steplist-marker[type="selected"] {
+    background-color: var(--spectrum-steplist-current-marker-color, var(--spectrum-global-color-gray-800))
+}
+
+.spectrum-Steplist-item:focus .spectrum-Steplist-marker,
+.spectrum-Steplist-item.is-focused .spectrum-Steplist-marker,
+.spectrum-Steplist-item *:focus .spectrum-Steplist-marker {
+    background-color: var(--spectrum-steplist-current-marker-color-key-focus, var(--spectrum-alias-focus-color))
+}
+
+.spectrum-Steplist-item[small] sp-label {
+    display: none;
+}
+
+sp-label {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+
+    display: block;
+    width: 120px;
+
+    font-size: 12px;
+    white-space: normal;
+
+    transform: translateX(-50%);
+}
+
+.spectrum-Steplist-item[first] sp-label {
+    left: 0;
+}
+
+.spectrum-Steplist-item[last] sp-label {
+    left: auto;
+    right: 0;
+
+    transform: translateX(50%);
+}
+
+.spectrum-Steplist-item[first][last] sp-label {
+    left: 50%;
+    transform: translate(-50%);
+}
+
+sp-label {
+    --color: var(--spectrum-steplist-incomplete-label-text-color, var(--spectrum-global-color-gray-600))
+}
+
+.spectrum-Steplist-item[type="complete"] sp-label {
+    --color: var(--spectrum-steplist-complete-label-text-color, var(--spectrum-global-color-gray-700))
+}
+
+.spectrum-Steplist-item[type="selected"] sp-label {
+    --color: var(--spectrum-steplist-current-label-text-color, var(--spectrum-global-color-gray-800))
+}
+
+.spectrum-Steplist-item[small] {
+    padding: 0 40px 0 0;
+    width: 80px;
+}
+
+.spectrum-Steplist-item[small][first],
+.spectrum-Steplist-item[small][last] {
+    width: 20px;
+}
+
+.spectrum-Steplist-item {
+    outline: none;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    vertical-align: bottom;
+
+    box-sizing: content-box;
+    width: 80px;
+    padding: 0 40px 0 0;
+}
+
+.spectrum-Steplist-item[type="selected"]:focus,
+.spectrum-Steplist-item[type="selected"].is-focused,
+.spectrum-Steplist-item[type="selected"] *:focus {
+    outline: none;
+}
+
+.spectrum-Steplist-item[first],
+.spectrum-Steplist-item[last] {
+    width: 20px;
+}
